@@ -1,12 +1,22 @@
-import { Typography } from '@mui/material'
+import { RouterProvider } from 'react-router'
+import { createBrowserRouter } from 'react-router-dom'
+import { DetectionPage } from './pages/detection'
+import { JoinPage } from './pages/join'
 import './App.scss'
 
 function App() {
-    return (
-        <Typography variant='h1'>
-            Flood Detection
-        </Typography>
-    )
+    const router = createBrowserRouter([
+        {
+            path: '/',
+            element: <JoinPage/>
+        },
+        {
+            path: '/detection',
+            element: <DetectionPage/>
+        }
+    ])
+
+    return <RouterProvider router={router} />
 }
 
 export default App
